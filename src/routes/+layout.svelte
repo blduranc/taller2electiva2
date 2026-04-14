@@ -2,7 +2,7 @@
 	<title>Prueba Lectiva</title>
 	<meta
 		name="description"
-		content="Base SvelteKit con arquitectura feature-first/domain-first para integrar Rick and Morty."
+		content="Catalogo de personajes Rick and Morty con arquitectura feature-first/domain-first."
 	/>
 </svelte:head>
 
@@ -12,7 +12,7 @@
 
 <style>
 	:global(html) {
-		color-scheme: light;
+		color-scheme: dark;
 	}
 
 	:global(body) {
@@ -20,9 +20,10 @@
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 		background:
-			radial-gradient(circle at top, rgba(78, 205, 196, 0.12), transparent 35%),
-			linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
-		color: #0f1c2e;
+			linear-gradient(180deg, rgba(229, 9, 20, 0.22) 0%, transparent 22rem),
+			radial-gradient(circle at 88% 8%, rgba(0, 217, 255, 0.22), transparent 20rem),
+			#050505;
+		color: #ffffff;
 		min-height: 100vh;
 	}
 

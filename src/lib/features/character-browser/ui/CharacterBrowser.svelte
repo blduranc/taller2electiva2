@@ -8,64 +8,65 @@
 </script>
 
 <section class="hero">
-	<div class="eyebrow">SvelteKit · Rick and Morty</div>
-	<h1>Arquitectura frontend lista para crecer sin mezclar UI con negocio.</h1>
-	<p>
-		Base feature-first/domain-first con contratos claros entre pantalla, dominio y API.
-	</p>
+	<div class="eyebrow">Rick and Morty Streaming</div>
+	<h1>Personajes en modo multiverso.</h1>
+	<p>Explora favoritos, rarezas y variantes con una vitrina oscura de alto contraste.</p>
 </section>
 
-<div class="panel">
+<section class="catalog">
 	<CharacterSearch query={data.query} onQueryChange={onQueryChange} />
 
 	<div class="meta">
-		<p>{data.total} personajes</p>
+		<p><strong>{data.total}</strong> personajes disponibles</p>
 		{#if data.error}
 			<p class="error">{data.error}</p>
 		{/if}
 	</div>
 
 	<CharacterList characters={data.characters} />
-</div>
+</section>
 
 <style>
 	section.hero {
-		max-width: 960px;
+		max-width: 1180px;
 		margin: 0 auto;
-		padding: 4rem 1.25rem 1.5rem;
+		padding: 4.5rem 1.25rem 2rem;
 	}
 
 	.eyebrow {
 		display: inline-flex;
-		padding: 0.4rem 0.75rem;
+		padding: 0.45rem 0.8rem;
 		border-radius: 999px;
-		background: rgba(78, 205, 196, 0.12);
-		color: #7ef0e3;
+		background: #e50914;
+		color: #ffffff;
 		font-size: 0.8rem;
-		letter-spacing: 0.08em;
+		font-weight: 800;
+		letter-spacing: 0;
 		text-transform: uppercase;
+		box-shadow: 0 0 28px rgba(229, 9, 20, 0.42);
 	}
 
 	h1 {
-		max-width: 14ch;
+		max-width: 13ch;
 		margin: 1rem 0 0.8rem;
-		font-size: clamp(2.4rem, 7vw, 4.8rem);
+		font-size: clamp(2.5rem, 4.6rem, 4.6rem);
 		line-height: 0.95;
+		text-wrap: balance;
 	}
 
 	p {
 		max-width: 60ch;
 		margin: 0;
-		color: rgba(15, 28, 46, 0.65);
-		font-size: 1.03rem;
+		color: #d8d8d8;
+		font-size: 1.08rem;
 	}
 
-	.panel {
-		max-width: 960px;
+	.catalog {
+		max-width: 1180px;
 		margin: 0 auto;
-		padding: 0 1.25rem 3rem;
+		padding: 0 1.25rem 4rem;
 		display: grid;
-		gap: 1rem;
+		gap: 1.25rem;
 	}
 
 	.meta {
@@ -77,10 +78,30 @@
 
 	.meta p {
 		margin: 0;
+		color: #b3b3b3;
 		font-size: 0.95rem;
 	}
 
+	.meta strong {
+		color: #7cff6b;
+	}
+
 	.error {
-		color: #ffb4b4;
+		color: #ffd447;
+	}
+
+	@media (max-width: 640px) {
+		section.hero {
+			padding-top: 3rem;
+		}
+
+		h1 {
+			font-size: 2.6rem;
+		}
+
+		.meta {
+			align-items: flex-start;
+			flex-direction: column;
+		}
 	}
 </style>
